@@ -6,7 +6,7 @@
 /*   By: lbonnefo <lbonnefo@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 10:25:46 by lbonnefo          #+#    #+#             */
-/*   Updated: 2022/10/21 16:06:42 by lbonnefo         ###   ########.fr       */
+/*   Updated: 2022/10/24 08:30:17 by lbonnefo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	ft_printf(const char *format, ...)
 		if (format[a] == '%')
 		{
 			a++;
+			if (format[a] == '\0')
+				return (rtn);
 			ft_conversion(a, ap, format, &rtn);
 		}
 		else
